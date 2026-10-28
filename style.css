@@ -1,0 +1,112 @@
+/* links.jlpouffier.fr — plain static replacement for LittleLink (2026-10-21).
+   Look copied from LittleLink's "Dark" theme (littlelink.css + brands.css, MIT).
+   Open Sans: SIL Open Font License 1.1 (https://openfontlicense.org), self-hosted,
+   latin subset only (variable weight file, the same one LittleLink served). */
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 300 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(fonts/open-sans-latin.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  --bg-color: #292929;
+  --font-color: #ffffff;
+  --a-color: #0085ff;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif,
+               "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji";
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: clamp(40px, 10vw, 72px) 20px 0; /* LittleLink: margin-top 12% of the column */
+  text-align: center;
+}
+@media (min-width: 400px) { .container { width: 85%; padding-left: 0; padding-right: 0; } }
+@media (min-width: 550px) { .container { width: 80%; } }
+
+.avatar {
+  display: inline-block;
+  vertical-align: middle;
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: 24px;
+  line-height: 64px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+@media (min-width: 550px) { h1 { font-size: 48px; line-height: 96px; } }
+
+.bio { max-width: 480px; margin: 0 auto 2.5rem; } /* LittleLink's effective text column */
+
+a { color: var(--a-color); }
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  min-height: 48px;
+  margin-bottom: 1rem;
+  padding: 0 12px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: .1px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.button:hover { filter: brightness(90%); }
+.button:focus-visible { outline: 3px solid var(--a-color); outline-offset: 3px; }
+
+.icon {
+  width: 20px;
+  height: 20px;
+  padding: 0 8px 3.5px 0;
+  box-sizing: content-box;
+  vertical-align: middle;
+}
+
+/* Brand colours, verbatim from LittleLink brands.css */
+.button-youtube  { color: #fff; background-color: #000; }
+.button-instagram { color: #fff; background-image: linear-gradient(-135deg, #1400c8, #b900b4, #f50000); }
+.button-discord  { color: #fff; background-color: #5865f2; }
+.button-x        { color: #fff; background-color: #000; }
+.button-bluesky  { color: #000; background-color: #f3f9ff; border: 1px solid #212121; line-height: 46px; }
+.button-mastodon { color: #fff; background-color: #0e68a0; }
+.button-github   { color: #fff; background-color: #000; }
+.button-linkedin { color: #fff; background-color: #2867b2; }
+.button-blog     { color: #000; background-color: #fff; }
+
+.footer { margin: 36px 0 0; padding-bottom: 36px; }
